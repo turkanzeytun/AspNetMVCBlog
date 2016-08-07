@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MyBlogg.Model.Blog_Makale>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>@ViewData["anaKategori"]</h3>
+            <div class="links">
+                @{
+                    var query = from p in Model
+                                group p by p.Makale.m_ID into g
+                                select new
+                                {
+                                    id = g.Key,
+                                    count = g.Count()
+                                };
+                   
+                    foreach (var item in query)
+                    { 
+                       MyBlogg.Model.Makale makale = Model.Where(s => s.Makale.m_ID == item.id).FirstOrDefault().Makale;
+
+                        <a href="@Url.Action("BlogList", "Makale", new { catID = item.id, seoBaslik = makale.m_Baslik, ustKategori = makale.m_AnaKategori })">  
+                            @makale.m_Baslik
+                            <span class="label label-default">
+                            @item.count
+                            </span>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>Recent</h3>
+            <div class="links small">
+                <a href="#">Vestibulum porttitor neque vitae odio vulputate molestie</a>
+                <a href="#">Etiam tellus mi, interdum id nulla in</a>
+                <a href="#">Cras eu tincidunt quam</a>
+                <a href="#">Donec rhoncus quam tortor, id pulvinar erat elementum eu</a>
+                <a href="#">Nunc lorem est, suscipit bibendum</a>
+                <a href="#">Fusce sollicitudin quis turpis eget mollis</a>
+                <a href="#">Cras eget sagittis dui, et mollis tortor</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>Tags</h3>
+            <ul class="list-tags push-up-10">
+                <li><a href="#"><span class="fa fa-tag"></span> Donec</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Bibendum</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Praesent</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Fusce</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Nam quis</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Maecenas</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Nulla facilisi</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Donec</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Nam vitae</a></li>
+                <li><a href="#"><span class="fa fa-tag"></span> Malesuada</a></li>
+            </ul>
+        </div>
+    </div>

@@ -1,0 +1,50 @@
+﻿<div class="content-frame-body">
+    <div class="block">
+        @using (@Html.BeginForm())
+        {
+
+        }
+        <form role="form" class="form-horizontal" id="commentForm">
+            <div class="form-group">
+                <label class="col-md-2 control-label">From:</label>
+                <div class="col-md-10">
+                    <input type="text" class="tagsinput" value="John (johndoe@domain.com)" data-placeholder="add email" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Subject:</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" value="Re: Lorem ipsum dolor sit amet" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea class="summernote_email">
+                        <p>Hello Dmitry,</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ligula risus, viverra sit amet purus id, ullamcorper venenatis leo. Ut vitae semper neque. Nunc vel lacus vel erat sodales ultricies sed sed massa. Duis non elementum velit. Nunc quis molestie dui. Nullam ullamcorper lectus in mattis volutpat. Nunc egestas felis sit amet ultrices euismod. Donec lacinia neque vel quam pharetra, non dignissim arcu semper. Donec ultricies, neque ut vehicula ultrices, ligula velit sodales purus, eget eleifend libero risus sed turpis. Fusce hendrerit vel dui ut pulvinar. Ut sed tristique ante, sed egestas turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p><strong>Best Regards<br />John Doe</strong></p>
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="pull-left">
+                        <button class="btn btn-default"><span class="fa fa-trash-o"></span> Delete Draft</button>
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-danger" id="saveComment"><span class="fa fa-envelope"></span> Send Message</button>
+                        <input type="submit" value="Send Message" name='sendMessage' class="btn btn-danger" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#saveComment").click(function () {
+        var form = $("form#commentForm");
+          form.attr("action", "@Url.Action("MakaleCommentAdd", "Makale")");
+          form.submit();
+      });
+</script>

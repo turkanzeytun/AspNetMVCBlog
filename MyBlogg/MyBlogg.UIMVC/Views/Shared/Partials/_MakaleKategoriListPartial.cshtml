@@ -1,0 +1,31 @@
+﻿@model IEnumerable< MyBlogg.Model.MakaleKategori>
+
+@foreach (var item in Model)
+{
+    <li class="xn-openable">
+        <a href="#" class="categoryListStyle">
+            <span class="fa fa-files-o"></span> <span class="xn-text">
+                @item.mk_Adi
+            </span>
+        </a> @*OOP*@
+       
+        @if (item.Makales.Count>0)
+        {
+            <ul>
+            @foreach (var makale in item.Makales)
+            {
+                <li>
+                    <a class="categoryListStyle" href="@Url.Action("BlogList", "Makale", new { catID = makale.m_ID, seoBaslik = makale.m_Baslik, ustKategori = makale.m_AnaKategori })">
+                        <span class="fa fa-image"></span> @makale.m_Baslik
+                    </a>
+                </li>
+            }
+            </ul>
+        }
+    </li>
+}
+
+
+
+
+

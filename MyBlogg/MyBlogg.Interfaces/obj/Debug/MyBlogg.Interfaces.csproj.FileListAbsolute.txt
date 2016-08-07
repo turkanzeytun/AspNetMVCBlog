@@ -1,0 +1,4 @@
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Interfaces\bin\Debug\MyBlogg.Interfaces.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Interfaces\bin\Debug\MyBlogg.Interfaces.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Interfaces\obj\Debug\MyBlogg.Interfaces.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Interfaces\obj\Debug\MyBlogg.Interfaces.pdb

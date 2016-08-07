@@ -1,0 +1,5 @@
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Model\bin\Debug\MyBlogg.Model.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Model\bin\Debug\MyBlogg.Model.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Model\obj\Debug\MyBlogg.Model.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Model\obj\Debug\MyBlogg.Model.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.Model\obj\Debug\MyBlogg.Model.csprojResolveAssemblyReference.cache

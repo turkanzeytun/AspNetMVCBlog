@@ -1,0 +1,76 @@
+﻿@model  MyBlogg.UIMVC.Helpers.PagerData<MyBlogg.Model.Blog_Makale>
+<div class="col-md-9">
+    <ul class="pagination pagination-sm pull-right push-down-20">
+         <li class="disabled"><a href="#">«</a></li>
+         @for (int i = 1; i <= Model.NumberOfPages; i++)
+         {
+             if (i == Model.CurrentPage)
+             {
+                 <li class="active"><a href="#">@i</a></li>
+             }
+             else
+             {
+                 <li><a class="page-number" href="javascript:void();" id="@i">@i</a></li>
+             }
+         }
+         <li><a href="#">»</a></li>
+     </ul>
+    
+    <div class="panel panel-default">
+         <div class="panel-body posts">
+             <div class="row">
+                 @foreach (var makale in Model.Data)
+                 {
+                     <div class="col-md-6">
+                         <div class="post-item">
+                             <div class="post-title">
+                                 <a href="@Url.Action("BlogMakale", "Makale", new { id = makale.b_MakaleID, seoBaslik = makale.b_MBaslik, ustKategori = makale.Makale.m_AnaKategori })">
+                                     @makale.b_MBaslik
+                                 </a>
+                             </div>
+                             <div class="post-date">
+                                 <span class="fa fa-calendar"></span> October 23, 2014 /
+                                 <a href="pages-blog-post.html#comments">3 Comments</a> /
+                                 <a href="pages-profile.html">by Dmitry Ivaniuk</a>
+                             </div>
+                             <div class="post-text">
+                                 <img src="@makale.b_MResim1" class="img-responsive img-text" />
+                                 <p>
+                                     @{
+                                         string icerik = makale.b_MIcerik.Substring(0, 100);
+                                         @icerik
+                                     }
+                                 </p>
+                             </div>
+                             <div class="post-row">
+                                 <div class="post-info">
+                                     <span class="fa fa-thumbs-up"></span> 15 - <span class="fa fa-eye"></span> 15,332 -
+                                     <span class="fa fa-star"></span> 322
+                                 </div>
+                                 <form method="post">
+                                     <button class="btn btn-default btn-rounded pull-right" value="@makale.b_MakaleID" name="btnDetayGetir">Read more &RightArrow;</button>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+                 }
+             </div>
+         </div>
+     </div>
+    
+    <ul class="pagination pagination-sm pull-right push-down-20">
+        <li class="disabled"><a href="#">«</a></li>
+        @for (int i = 1; i <= Model.NumberOfPages; i++)
+        {
+            if (i == Model.CurrentPage)
+            {
+                <li class="active"><a href="#">@i</a></li>
+            }
+            else
+            {
+                <li><a class="page-number" href="javascript:void();" id="@i">@i</a></li>
+            }
+        }
+        <li><a href="#">»</a></li>
+    </ul>
+</div>

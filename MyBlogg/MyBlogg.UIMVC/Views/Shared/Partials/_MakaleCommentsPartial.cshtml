@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MyBlogg.Model.MakaleYorumlar>
+<h3 class="push-down-20">Comments</h3>
+<ul class="media-list">
+@foreach (var item in Model)
+    {
+     <li class="media">
+         <a class="pull-left" href="#">
+             <img class="media-object img-text" src="/assets/images/users/user.jpg" alt="Dmitry Ivaniuk" width="64">
+         </a>
+         <div class="media-body">
+             <h4 class="media-heading">@item.YorumAtanBilgiler.k_IPAdres</h4>
+             <p>
+                 @item.y_Icerik
+             </p>
+             <p class="text-muted">@item.y_Tarih.Value.ToShortDateString()</p>
+         </div>
+     </li>    
+    }
+</ul>

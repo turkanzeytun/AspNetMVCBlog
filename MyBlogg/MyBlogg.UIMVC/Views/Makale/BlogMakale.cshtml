@@ -1,0 +1,101 @@
+﻿@model MyBlogg.Model.Blog_Makale
+@{
+    ViewBag.Title = "BlogMakale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+<link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+<!-- END META SECTION -->
+<!-- CSS INCLUDE -->
+<link rel="stylesheet" type="text/css" id="theme" href="~/css/theme-default.css" />
+<!-- EOF CSS INCLUDE -->   
+}
+
+@section contentTopOne{
+ 
+}
+
+@section contentTopTwo{
+   
+}
+
+@section content{
+    <div class="page-content-wrap">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-body posts">
+                        <div class="post-item">
+                            <div class="post-title">
+                                @Model.b_MBaslik
+                            </div>
+                            <div class="post-date"><span class="fa fa-calendar"></span> October 23, 2014 / <a href="pages-blog-post.html#comments">3 Comments</a> / <a href="pages-profile.html">by Dmitry Ivaniuk</a></div>
+                            <div class="post-text">
+                                <p>
+                                    <strong>@Model.b_MBaslik</strong>,
+                                    @Html.Raw(Model.b_MIcerik)
+                                    <h4>See also</h4>
+                                    <ul>
+                                        <li><a href="#">Portal icon</a></li>
+                                        <li><a href="#">Astronomy portal</a></li>
+                                        <li><a href="#">Portal icon</a></li>
+                                        <li><a href="#">Space portal</a></li>
+                                        <li><a href="#">Portal icon</a></li>
+                                        <li><a href="#">Spaceflight portal</a></li>
+                                        <li><a href="#">Earth's location in the universe</a></li>
+                                        <li><a href="#">Human outpost</a></li>
+                                    </ul>
+                            </div>
+                            <div class="post-row">
+                                <div class="post-info">
+                                    <span class="fa fa-thumbs-up"></span> 15 - <span class="fa fa-eye"></span> 15,332 - <span class="fa fa-star"></span> 322
+                                </div>
+                            </div>
+                        </div>
+                        @*3 saniyede bir yeni yorumlar eklenecek*@
+                        <div id="comments">@Html.Action("MakaleCommentsPartial", "Makale") </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                @*@Html.Partial("Partials/MakaleKategoriCountPartial")*@
+                @Html.Action("MakaleKategoriCountPartial", "Makale")
+            </div>
+        </div>
+    </div>
+
+    @Html.Action("MakaleCommentFormPartial", "Makale") 
+}
+
+@section scripts{
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script src="~/js/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<!-- START THIS PAGE PLUGINS-->
+<script type='text/javascript' src='~/js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="~/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/summernote/summernote.js"></script>
+<script type="text/javascript" src="~/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/bootstrap/bootstrap-select.js"></script>
+<script type="text/javascript" src="~/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+<!-- END THIS PAGE PLUGINS--> 
+<!-- END THIS PAGE PLUGINS-->
+<!-- START TEMPLATE -->
+@*<script type="text/javascript" src="~/js/settings.js"></script>*@
+<script type="text/javascript" src="~/js/plugins.js"></script>
+<script type="text/javascript" src="~/js/actions.js"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->
+<script type="text/javascript">
+    window.setInterval(function () {
+        var updateUrl = '@Url.Action("MakaleCommentsPartial","Makale", new { id = Model.b_MakaleID })';
+        $.get(updateUrl, function (result) {
+            $('#comments').html(result);
+        });
+    }, 3000);
+</script>
+}

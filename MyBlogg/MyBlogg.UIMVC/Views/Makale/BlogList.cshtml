@@ -1,0 +1,87 @@
+﻿@*@model  MyBlogg.UIMVC.Helpers.PagerData<MyBlogg.Model.Blog_Makale>*@
+@{
+    ViewBag.Title = "BlogList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="~/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+}
+
+@section contentTopOne{
+    <!--  İÇERİK  -->
+}       
+
+@section contentTopTwo{
+    <!-- PAGE TITLE -->
+    <div class="page-title">
+        <h2><span class="fa fa-arrow-circle-o-left"></span> @ViewData["makaleKategori"]</h2>
+    </div>
+    <!-- END PAGE TITLE -->
+}
+
+@section content{
+    <div class="row">
+        <div id="makale-list">
+            @Html.Action("MakaleListPartial", "Makale", new { catID = ViewData["catID"] }) 
+        </div>
+ 
+        <div class="col-md-3">
+            @*@Html.Partial("Partials/MakaleKategoriCountPartial")*@
+            @Html.Action("MakaleKategoriCountPartial", "Makale")
+        </div>
+    </div>
+}
+
+@section scripts{
+<!-- START SCRIPTS -->
+<!-- START PLUGINS -->
+<script src="~/js/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="~/js/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- END PLUGINS -->
+<!-- START THIS PAGE PLUGINS-->
+<script type='text/javascript' src='~/js/plugins/icheck/icheck.min.js'></script>
+<script type="text/javascript" src="~/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+<!-- END THIS PAGE PLUGINS-->
+<!-- START TEMPLATE -->
+@*<script type="text/javascript" src="~/js/settings.js"></script>*@
+<script type="text/javascript" src="~/js/plugins.js"></script>
+<script type="text/javascript" src="~/js/actions.js"></script>
+<!-- END TEMPLATE -->
+<!-- END SCRIPTS -->
+
+<script type="text/javascript">//ÇALIŞTI 1. YÖNTEM
+    $(document).ready(function () {
+        //$('.page-number').click(function () {//2. TIKLAMADA ÇALIŞMAZ
+        $("body").on('click', '.page-number', function () {
+            var categoryID = '@ViewData["catID"]';
+            var page = $(this).attr('id');
+            $('#makale-list').load('@Html.Raw(@Url.Action("MakaleListPartial", "Makale"))',
+                                  { catID: categoryID, pageNum: page });
+        });
+    });
+</script>
+
+@*<script type="text/javascript">//ÇALIŞTI 2. YÖNTEM
+    $(document).ready(function () {
+        //$('.page-number').click(function () {//İKİNCİ TIKLAMADA ÇALIŞMAZ
+            $("body").on('click', '.page-number', function () {
+            var categoryID = '@ViewData["catID"]';
+            var page = $(this).attr('id');
+            $.ajax({
+                url: '@Html.Raw(@Url.Action("MakaleListPartial", "Makale"))',
+                data: { catID: categoryID, pageNum: page },
+                success: function (data) {
+                    $("#makale-list").html(data);
+                }
+            });
+        });
+    });
+</script>*@
+
+}

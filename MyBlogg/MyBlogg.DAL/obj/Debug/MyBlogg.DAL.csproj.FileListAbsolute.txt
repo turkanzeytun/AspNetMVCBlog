@@ -1,0 +1,12 @@
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\MyBlogg.DAL.dll.config
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\MyBlogg.DAL.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\MyBlogg.DAL.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\EntityFramework.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\MyBlogg.Model.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\MyBlogg.Model.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\EntityFramework.xml
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\obj\Debug\MyBlogg.DAL.csprojResolveAssemblyReference.cache
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\obj\Debug\MyBlogg.DAL.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.DAL\obj\Debug\MyBlogg.DAL.pdb

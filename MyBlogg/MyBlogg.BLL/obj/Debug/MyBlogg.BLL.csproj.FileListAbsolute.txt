@@ -1,0 +1,11 @@
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.BLL.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.BLL.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.DAL.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.Model.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\EntityFramework.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.DAL.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\MyBlogg.Model.pdb
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\bin\Debug\EntityFramework.xml
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\obj\Debug\MyBlogg.BLL.csprojResolveAssemblyReference.cache
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\obj\Debug\MyBlogg.BLL.dll
+C:\Users\TURKAN\Documents\Visual Studio 2013\Projects\MyBlogg\MyBlogg.BLL\obj\Debug\MyBlogg.BLL.pdb
